@@ -14,9 +14,9 @@ Install with [npm](https://www.npmjs.com/package/data-of-type)
 ## Usage
 
 ```js
-import {isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject} from 'get-safe-value';
+import {isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject} from 'data-of-type';
 // or
-// const { isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject } =  require('get-safe-value');
+// const { isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject } =  require('data-of-type');
 
 
 // isNull

@@ -1,6 +1,6 @@
 {
     "name": "data-of-type",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Determine the type of JavaScript data",
     "main": "index.js",
     "scripts": {
