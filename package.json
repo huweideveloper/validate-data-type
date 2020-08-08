@@ -8,15 +8,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/huweicool/get-safe-value.git"
+        "url": "git+https://github.com/huweicool/data-of-type.git"
     },
     "keywords": [],
     "author": "huweiweb@126.com",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/huweicool/get-safe-value/issues"
+        "url": "https://github.com/huweicool/data-of-type/issues"
     },
-    "homepage": "https://github.com/huweicool/get-safe-value#readme",
+    "homepage": "https://github.com/huweicool/data-of-type#readme",
     "dependencies": {
         "mocha": "^3.5.3",
         "nyc": "^11.4.1"
