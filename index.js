@@ -23,8 +23,8 @@ const isNumber = value => isType(value, 'Number');
 const isValidNumber = value => isNumber(value) && isFinite(value) && value < maxNumber && value > -maxNumber;
 
 // function
-const isFunction = value => isType(value, 'Function');
 const isAsyncFunction = value => isType(value, 'AsyncFunction');
+const isFunction = value => isType(value, 'Function') || isAsyncFunction(value);
 
 // array
 const isArray = value => isType(value, 'Array');

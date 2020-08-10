@@ -1,22 +1,22 @@
-# type-data
+# validate-data-type
 Determine the type of JavaScript data
 
 
 ## Install
 
-Install with [npm](https://www.npmjs.com/package/type-data)
+Install with [npm](https://www.npmjs.com/package/validate-data-type)
 
 ```sh
-  npm install --save type-data
+  npm install --save validate-data-type
 ```
 
 
 ## Usage
 
 ```js
-import {isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject} from 'type-data';
+import {isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject} from 'validate-data-type';
 // or
-// const { isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject } =  require('type-data');
+// const { isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject } =  require('validate-data-type');
 
 
 // isNull
