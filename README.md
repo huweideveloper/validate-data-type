@@ -1,22 +1,22 @@
-# data-of-type
+# type-data
 Determine the type of JavaScript data
 
 
 ## Install
 
-Install with [npm](https://www.npmjs.com/package/data-of-type)
+Install with [npm](https://www.npmjs.com/package/type-data)
 
 ```sh
-  npm install --save data-of-type
+  npm install --save type-data
 ```
 
 
 ## Usage
 
 ```js
-import {isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject} from 'data-of-type';
+import {isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject} from 'type-data';
 // or
-// const { isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject } =  require('data-of-type');
+// const { isNull,isUndefined,isString,isBoolean,isNumber,isFunction,isAsyncFunction,isArray,isObject,isArrayBuffer,isDate,isError,isMap, isSet, isPromise,isSymbol,isWeakMap, isWeakSet, isValidString, isValidNumber, isValidArray, isValidObject } =  require('type-data');
 
 
 // isNull
@@ -51,6 +51,8 @@ console.log(isBoolean(false)); //true
 console.log(isBoolean(true)); //true
 console.log(isBoolean('123')); //false
 console.log(isBoolean(1)); //false
+console.log(isTure(true)); // true
+console.log(isFalse(true)); // false
 
 // isNumber
 console.log(isNumber(1)); //true
@@ -76,7 +78,7 @@ console.log(isFunction([])); //false
 // isAsyncFunction
 console.log(isAsyncFunction(function(){})); //false
 console.log(isAsyncFunction(async function(){})); //true
-  
+
 // isArray
 console.log(isArray([])); //true
 console.log(isArray([1,2,3])); //true
@@ -146,15 +148,17 @@ console.log(isWeakSet(new WeakSet())); //true
 | isString | any | Boolean |
 | isValidString | any | Boolean |
 | isBoolean | any | Boolean |
+| isTure | any | Boolean |
+| isFalse | any | Boolean |
 | isNumber | any | Boolean |
 | isValidNumber | any | Boolean |
 | isFunction | any | Boolean |
 | isAsyncFunction | any | Boolean |
 | isArray | any | Boolean |
+| isArrayBuffer | any | Boolean |
 | isValidArray | any | Boolean |
 | isObject | any | Boolean |
 | isValidObject | any | Boolean |
-| isArrayBuffer | any | Boolean |
 | isDate | any | Boolean |
 | isError | any | Boolean |
 | isMap | any | Boolean |
@@ -163,6 +167,7 @@ console.log(isWeakSet(new WeakSet())); //true
 | isSymbol | any | Boolean |
 | isWeakMap | any | Boolean |
 | isWeakSet | any | Boolean |
+
 
 
 ## Test

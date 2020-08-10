@@ -1,6 +1,6 @@
 {
-    "name": "data-of-type",
-    "version": "1.0.2",
+    "name": "type-data",
+    "version": "1.1.0",
     "description": "Determine the type of JavaScript data",
     "main": "index.js",
     "scripts": {
@@ -8,15 +8,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/huweicool/data-of-type.git"
+        "url": "git+https://github.com/huweicool/type-data.git"
     },
     "keywords": [],
     "author": "huweiweb@126.com",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/huweicool/data-of-type/issues"
+        "url": "https://github.com/huweicool/type-data/issues"
     },
-    "homepage": "https://github.com/huweicool/data-of-type#readme",
+    "homepage": "https://github.com/huweicool/type-data#readme",
     "dependencies": {
         "mocha": "^3.5.3",
         "nyc": "^11.4.1"

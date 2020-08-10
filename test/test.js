@@ -4,13 +4,19 @@ const {
   isNull,
   isUndefined,
   isString,
+  isValidString,
   isBoolean,
+  isTure,
+  isFalse,
   isNumber,
+  isValidNumber,
   isFunction,
   isAsyncFunction,
   isArray,
-  isObject,
   isArrayBuffer,
+  isValidArray,
+  isObject,
+  isValidObject,
   isDate,
   isError,
   isMap,
@@ -19,10 +25,6 @@ const {
   isSymbol,
   isWeakMap,
   isWeakSet,
-  isValidString,
-  isValidNumber,
-  isValidArray,
-  isValidObject,
 } = require('../index');
 const assert = require('assert');
 
@@ -89,6 +91,10 @@ describe('isBoolean', function() {
     assert.deepStrictEqual(isBoolean({age:1}), false);
     assert.deepStrictEqual(isBoolean([1,2,3]), false);
     assert.deepStrictEqual(isBoolean(function(){}), false);
+    assert.deepStrictEqual(isTure(true), true);
+    assert.deepStrictEqual(isFalse(false), true);
+    assert.deepStrictEqual(isTure(false), false);
+    assert.deepStrictEqual(isFalse(true), false);
   });
 });
 
