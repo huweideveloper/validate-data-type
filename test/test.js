@@ -5,6 +5,7 @@ const {
   isUndefined,
   isString,
   isValidString,
+  isEmptyString,
   isBoolean,
   isTure,
   isFalse,
@@ -15,8 +16,10 @@ const {
   isArray,
   isArrayBuffer,
   isValidArray,
+  isEmptyArray,
   isObject,
   isValidObject,
+  isEmptyObject,
   isDate,
   isError,
   isMap,
@@ -404,5 +407,25 @@ describe('isValidObject', function() {
     assert.deepStrictEqual(isValidObject([1]), false);
   });
 });
+
+describe('isEmptyString', function() {
+  it('test isEmptyString', function() {
+    assert.deepStrictEqual(isEmptyString(''), true);
+    assert.deepStrictEqual(isEmptyString('hello'), false);
+  });
+});
+describe('isEmptyArray', function() {
+  it('test isEmptyArray', function() {
+    assert.deepStrictEqual(isEmptyArray([]), true);
+    assert.deepStrictEqual(isEmptyArray([1]), false);
+  });
+});
+describe('isEmptyObject', function() {
+  it('test isEmptyObject', function() {
+    assert.deepStrictEqual(isEmptyObject({}), true);
+    assert.deepStrictEqual(isEmptyObject({age:1}), false);
+  });
+});
+
 
 
