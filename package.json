@@ -4,7 +4,8 @@
     "description": "Determine the type of JavaScript data",
     "main": "index.js",
     "scripts": {
-        "test": "nyc --reporter=text --reporter=html mocha"
+        "test": "nyc --reporter=text --reporter=html mocha",
+        "build": "node_modules/.bin/rollup -c ./rollup.config.js"
     },
     "repository": {
         "type": "git",
@@ -20,5 +21,16 @@
     "dependencies": {
         "mocha": "^3.5.3",
         "nyc": "^11.4.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "@rollup/plugin-babel": "^5.2.1",
+        "@rollup/plugin-buble": "^0.21.3",
+        "@rollup/plugin-typescript": "^6.1.0",
+        "rollup": "^2.33.1",
+        "rollup-plugin-serve": "^1.1.0",
+        "rollup-plugin-uglify": "^6.0.4",
+        "typescript": "^4.0.5"
     }
 }
