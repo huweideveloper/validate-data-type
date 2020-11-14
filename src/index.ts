@@ -1,92 +1,92 @@
 const _toString = Object.prototype.toString;
-const isType = (value, type) => _toString.call(value) === '[object ' + type + ']';
+const isType = (value:any, type: string) : boolean => _toString.call(value) === '[object ' + type + ']';
 
-const isNull = value => isType(value, 'Null');
-// const isUndefined = value => isType(value, 'Undefined');
+const isNull = (value: any) : boolean => isType(value, 'Null');
+const isUndefined = (value: any) : boolean => isType(value, 'Undefined');
 
-// // string
-// function trim(value) {
-//     if (String.prototype.trim) return value.trim();
-//     return value.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-// }
-// const isString = value => isType(value, 'String');
-// const isValidString = value => isString(value) && trim(value).length > 0;
-// const isEmptyString = value => isString(value) && trim(value).length === 0;
+// string
+function trim(value: string) {
+    if (!!String.prototype.trim) return value.trim();
+    return value.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+}
+const isString = (value: any) : boolean => isType(value, 'String');
+const isValidString = (value: any) : boolean => isString(value) && trim(value).length > 0;
+const isEmptyString = (value: any) : boolean => isString(value) && trim(value).length === 0;
 
-// // boolean
-// const isBoolean = value => isType(value, 'Boolean');
-// const isTure = value => isBoolean(value) && value === true;
-// const isFalse = value => isBoolean(value) && value === false;
+// boolean
+const isBoolean = (value: any) : boolean => isType(value, 'Boolean');
+const isTrue = (value: any) : boolean => isBoolean(value) && value === true;
+const isFalse = (value: any) : boolean => isBoolean(value) && value === false;
 
-// // number
-// const MaxNumber = Math.pow(2, 53) - 1;
-// const isNumber = value => isType(value, 'Number');
-// const isValidNumber = value => isNumber(value) && isFinite(value) && value < MaxNumber && value > -MaxNumber;
+// number
+const MaxNumber = Math.pow(2, 53) - 1;
+const isNumber = (value: any) : boolean => isType(value, 'Number');
+const isValidNumber = (value: any) : boolean => isNumber(value) && isFinite(value) && value < MaxNumber && value > -MaxNumber;
 
-// // function
-// const isGeneralFunction = value => isType(value, 'Function');
-// const isAsyncFunction = value => isType(value, 'AsyncFunction');
-// const isGeneratorFunction = value => isType(value, 'GeneratorFunction');
-// const isFunction = value => _toString.call(value).toLowerCase().includes("function");
+// function
+const isGeneralFunction = (value: any) : boolean => isType(value, 'Function');
+const isAsyncFunction = (value: any) : boolean => isType(value, 'AsyncFunction');
+const isGeneratorFunction = (value: any) : boolean => isType(value, 'GeneratorFunction');
+const isFunction = (value: any) : boolean => _toString.call(value).toLowerCase().includes("function");
 
-// // array
-// const isArray = value => isType(value, 'Array');
-// const isArrayBuffer = value => isType(value, 'ArrayBuffer');
-// const isValidArray = value => isArray(value) && value.length > 0;
-// const isEmptyArray = value => isArray(value) && value.length === 0;
+// array
+const isArray = (value: any) : boolean => isType(value, 'Array');
+const isArrayBuffer = (value: any) : boolean => isType(value, 'ArrayBuffer');
+const isValidArray = (value: any) : boolean => isArray(value) && value.length > 0;
+const isEmptyArray = (value: any) : boolean => isArray(value) && value.length === 0;
 
-// // object
-// const isObject = value => isType(value, 'Object');
-// const isValidObject = value => isObject(value) && Object.keys(value).length > 0;
-// const isEmptyObject = value => isObject(value) && Object.keys(value).length === 0;
+// object
+const isObject = (value: any) : boolean => isType(value, 'Object');
+const isValidObject = (value: any) : boolean => isObject(value) && Object.keys(value).length > 0;
+const isEmptyObject = (value: any) : boolean => isObject(value) && Object.keys(value).length === 0;
 
-// // date
-// const isDate = value => isType(value, 'Date');
-// // error
-// const isError = value => isType(value, 'Error');
-// //map
-// const isMap = value => isType(value, 'Map');
-// //set
-// const isSet = value => isType(value, 'Set');
-// //promise
-// const isPromise = value => isType(value, 'Promise');
-// //symbol
-// const isSymbol = value => isType(value, 'Symbol');
-// // weakMap
-// const isWeakMap = value => isType(value, 'WeakMap');
-// // weakSet
-// const isWeakSet = value => isType(value, 'WeakSet');
+// date
+const isDate = (value: any) : boolean => isType(value, 'Date');
+// error
+const isError = (value: any) : boolean => isType(value, 'Error');
+//map
+const isMap = (value: any) : boolean => isType(value, 'Map');
+//set
+const isSet = (value: any) : boolean => isType(value, 'Set');
+//promise
+const isPromise = (value: any) : boolean => isType(value, 'Promise');
+//symbol
+const isSymbol = (value: any) : boolean => isType(value, 'Symbol');
+// weakMap
+const isWeakMap = (value: any) : boolean => isType(value, 'WeakMap');
+// weakSet
+const isWeakSet = (value: any) : boolean => isType(value, 'WeakSet');
 
 
 
 export {
     isNull,
-    // isUndefined,
-    // isString,
-    // isValidString,
-    // isEmptyString,
-    // isBoolean,
-    // isTure,
-    // isFalse,
-    // isNumber,
-    // isValidNumber,
-    // isGeneralFunction,
-    // isGeneratorFunction,
-    // isFunction,
-    // isAsyncFunction,
-    // isArray,
-    // isArrayBuffer,
-    // isValidArray,
-    // isEmptyArray,
-    // isObject,
-    // isValidObject,
-    // isEmptyObject,
-    // isDate,
-    // isError,
-    // isMap,
-    // isSet,
-    // isPromise,
-    // isSymbol,
-    // isWeakMap,
-    // isWeakSet,
+    isUndefined,
+    isString,
+    isValidString,
+    isEmptyString,
+    isBoolean,
+    isTrue,
+    isFalse,
+    isNumber,
+    isValidNumber,
+    isGeneralFunction,
+    isGeneratorFunction,
+    isFunction,
+    isAsyncFunction,
+    isArray,
+    isArrayBuffer,
+    isValidArray,
+    isEmptyArray,
+    isObject,
+    isValidObject,
+    isEmptyObject,
+    isDate,
+    isError,
+    isMap,
+    isSet,
+    isPromise,
+    isSymbol,
+    isWeakMap,
+    isWeakSet,
 }

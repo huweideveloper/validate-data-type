@@ -4,7 +4,7 @@
 }((function () { 'use strict';
 
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.isWeakSet = exports.isWeakMap = exports.isSymbol = exports.isPromise = exports.isSet = exports.isMap = exports.isError = exports.isDate = exports.isEmptyObject = exports.isValidObject = exports.isObject = exports.isEmptyArray = exports.isValidArray = exports.isArrayBuffer = exports.isArray = exports.isAsyncFunction = exports.isFunction = exports.isGeneratorFunction = exports.isGeneralFunction = exports.isValidNumber = exports.isNumber = exports.isFalse = exports.isTure = exports.isBoolean = exports.isEmptyString = exports.isValidString = exports.isString = exports.isUndefined = exports.isNull = void 0;
+    exports.isWeakSet = exports.isWeakMap = exports.isSymbol = exports.isPromise = exports.isSet = exports.isMap = exports.isError = exports.isDate = exports.isEmptyObject = exports.isValidObject = exports.isObject = exports.isEmptyArray = exports.isValidArray = exports.isArrayBuffer = exports.isArray = exports.isAsyncFunction = exports.isFunction = exports.isGeneratorFunction = exports.isGeneralFunction = exports.isValidNumber = exports.isNumber = exports.isFalse = exports.isTrue = exports.isBoolean = exports.isEmptyString = exports.isValidString = exports.isString = exports.isUndefined = exports.isNull = void 0;
     var _toString = Object.prototype.toString;
     var isType = function (value, type) { return _toString.call(value) === '[object ' + type + ']'; };
     var isNull = function (value) { return isType(value, 'Null'); };
@@ -13,7 +13,7 @@
     exports.isUndefined = isUndefined;
     // string
     function trim(value) {
-        if (String.prototype.trim)
+        if (!!String.prototype.trim)
             { return value.trim(); }
         return value.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
     }
@@ -26,8 +26,8 @@
     // boolean
     var isBoolean = function (value) { return isType(value, 'Boolean'); };
     exports.isBoolean = isBoolean;
-    var isTure = function (value) { return isBoolean(value) && value === true; };
-    exports.isTure = isTure;
+    var isTrue = function (value) { return isBoolean(value) && value === true; };
+    exports.isTrue = isTrue;
     var isFalse = function (value) { return isBoolean(value) && value === false; };
     exports.isFalse = isFalse;
     // number
