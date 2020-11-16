@@ -1,1 +1,116 @@
-!function(r){"function"==typeof define&&define.amd?define(r):r()}((function(){"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isWeakSet=exports.isWeakMap=exports.isSymbol=exports.isPromise=exports.isSet=exports.isMap=exports.isError=exports.isDate=exports.isEmptyObject=exports.isValidObject=exports.isObject=exports.isEmptyArray=exports.isValidArray=exports.isArrayBuffer=exports.isArray=exports.isAsyncFunction=exports.isFunction=exports.isGeneratorFunction=exports.isGeneralFunction=exports.isValidNumber=exports.isNumber=exports.isFalse=exports.isTrue=exports.isBoolean=exports.isEmptyString=exports.isValidString=exports.isString=exports.isUndefined=exports.isNull=void 0;var r=Object.prototype.toString,t=function(t,e){return r.call(t)==="[object "+e+"]"};exports.isNull=function(r){return t(r,"Null")};function e(r){return String.prototype.trim?r.trim():r.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,"")}exports.isUndefined=function(r){return t(r,"Undefined")};var n=function(r){return t(r,"String")};exports.isString=n;exports.isValidString=function(r){return n(r)&&e(r).length>0};exports.isEmptyString=function(r){return n(r)&&0===e(r).length};var i=function(r){return t(r,"Boolean")};exports.isBoolean=i;exports.isTrue=function(r){return i(r)&&!0===r};exports.isFalse=function(r){return i(r)&&!1===r};var o=Math.pow(2,53)-1,s=function(r){return t(r,"Number")};exports.isNumber=s;exports.isValidNumber=function(r){return s(r)&&isFinite(r)&&r<o&&r>-o};exports.isGeneralFunction=function(r){return t(r,"Function")};exports.isAsyncFunction=function(r){return t(r,"AsyncFunction")};exports.isGeneratorFunction=function(r){return t(r,"GeneratorFunction")};exports.isFunction=function(t){return r.call(t).toLowerCase().includes("function")};var u=function(r){return t(r,"Array")};exports.isArray=u;exports.isArrayBuffer=function(r){return t(r,"ArrayBuffer")};exports.isValidArray=function(r){return u(r)&&r.length>0};exports.isEmptyArray=function(r){return u(r)&&0===r.length};var p=function(r){return t(r,"Object")};exports.isObject=p;exports.isValidObject=function(r){return p(r)&&Object.keys(r).length>0};exports.isEmptyObject=function(r){return p(r)&&0===Object.keys(r).length};exports.isDate=function(r){return t(r,"Date")};exports.isError=function(r){return t(r,"Error")};exports.isMap=function(r){return t(r,"Map")};exports.isSet=function(r){return t(r,"Set")};exports.isPromise=function(r){return t(r,"Promise")};exports.isSymbol=function(r){return t(r,"Symbol")};exports.isWeakMap=function(r){return t(r,"WeakMap")};exports.isWeakSet=function(r){return t(r,"WeakSet")}}));
+!(function (n, t) {
+  "object" == typeof exports && "undefined" != typeof module
+    ? t(exports)
+    : "function" == typeof define && define.amd
+    ? define(["exports"], t)
+    : t(
+        ((n = "undefined" != typeof globalThis ? globalThis : n || self)[
+          "validate-data-type"
+        ] = {})
+      );
+})(this, function (n) {
+  "use strict";
+  var t = Object.prototype.toString,
+    e = function (n, e) {
+      return t.call(n) === "[object " + e + "]";
+    };
+  function r(n) {
+    return String.prototype.trim
+      ? n.trim()
+      : n.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+  }
+  var i = function (n) {
+      return e(n, "String");
+    },
+    u = function (n) {
+      return e(n, "Boolean");
+    },
+    o = Math.pow(2, 53) - 1,
+    c = function (n) {
+      return e(n, "Number");
+    },
+    f = function (n) {
+      return e(n, "Array");
+    },
+    s = function (n) {
+      return e(n, "Object");
+    };
+  (n.isArray = f),
+    (n.isArrayBuffer = function (n) {
+      return e(n, "ArrayBuffer");
+    }),
+    (n.isAsyncFunction = function (n) {
+      return e(n, "AsyncFunction");
+    }),
+    (n.isBoolean = u),
+    (n.isDate = function (n) {
+      return e(n, "Date");
+    }),
+    (n.isEmptyArray = function (n) {
+      return f(n) && 0 === n.length;
+    }),
+    (n.isEmptyObject = function (n) {
+      return s(n) && 0 === Object.keys(n).length;
+    }),
+    (n.isEmptyString = function (n) {
+      return i(n) && 0 === r(n).length;
+    }),
+    (n.isError = function (n) {
+      return e(n, "Error");
+    }),
+    (n.isFalse = function (n) {
+      return u(n) && !1 === n;
+    }),
+    (n.isFunction = function (n) {
+      return t.call(n).toLowerCase().includes("function");
+    }),
+    (n.isGeneralFunction = function (n) {
+      return e(n, "Function");
+    }),
+    (n.isGeneratorFunction = function (n) {
+      return e(n, "GeneratorFunction");
+    }),
+    (n.isMap = function (n) {
+      return e(n, "Map");
+    }),
+    (n.isNull = function (n) {
+      return e(n, "Null");
+    }),
+    (n.isNumber = c),
+    (n.isObject = s),
+    (n.isPromise = function (n) {
+      return e(n, "Promise");
+    }),
+    (n.isSet = function (n) {
+      return e(n, "Set");
+    }),
+    (n.isString = i),
+    (n.isSymbol = function (n) {
+      return e(n, "Symbol");
+    }),
+    (n.isTrue = function (n) {
+      return u(n) && !0 === n;
+    }),
+    (n.isUndefined = function (n) {
+      return e(n, "Undefined");
+    }),
+    (n.isValidArray = function (n) {
+      return f(n) && n.length > 0;
+    }),
+    (n.isValidNumber = function (n) {
+      return c(n) && isFinite(n) && n < o && n > -o;
+    }),
+    (n.isValidObject = function (n) {
+      return s(n) && Object.keys(n).length > 0;
+    }),
+    (n.isValidString = function (n) {
+      return i(n) && r(n).length > 0;
+    }),
+    (n.isWeakMap = function (n) {
+      return e(n, "WeakMap");
+    }),
+    (n.isWeakSet = function (n) {
+      return e(n, "WeakSet");
+    }),
+    Object.defineProperty(n, "__esModule", { value: !0 });
+});

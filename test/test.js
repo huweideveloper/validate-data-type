@@ -11,6 +11,8 @@ const {
   isFalse,
   isNumber,
   isValidNumber,
+  isGeneralFunction,
+  isGeneratorFunction,
   isFunction,
   isAsyncFunction,
   isArray,
@@ -28,7 +30,7 @@ const {
   isSymbol,
   isWeakMap,
   isWeakSet,
-} = require('../index');
+} = require('../src/index');
 const assert = require('assert');
 
 describe('isNull', function() {
@@ -117,6 +119,44 @@ describe('isNumber', function() {
     assert.deepStrictEqual(isNumber(function(){}), false);
   });
 });
+
+
+describe('isGeneralFunction', function() {
+  it('test isGeneralFunction', function() {
+    assert.deepStrictEqual(isGeneralFunction(null), false);
+    assert.deepStrictEqual(isGeneralFunction(undefined), false);
+    assert.deepStrictEqual(isGeneralFunction(''), false);
+    assert.deepStrictEqual(isGeneralFunction('123'), false);
+    assert.deepStrictEqual(isGeneralFunction(1), false);
+    assert.deepStrictEqual(isGeneralFunction(false), false);
+    assert.deepStrictEqual(isGeneralFunction(true), false);
+    assert.deepStrictEqual(isGeneralFunction({}), false);
+    assert.deepStrictEqual(isGeneralFunction([]), false);
+    assert.deepStrictEqual(isGeneralFunction({age:1}), false);
+    assert.deepStrictEqual(isGeneralFunction([1,2,3]), false);
+    assert.deepStrictEqual(isGeneralFunction(function(){}), true);
+  });
+});
+
+
+describe('isGeneratorFunction', function() {
+  it('test isGeneratorFunction', function() {
+    function* test1(){}
+    assert.deepStrictEqual(isGeneratorFunction(null), false);
+    assert.deepStrictEqual(isGeneratorFunction(undefined), false);
+    assert.deepStrictEqual(isGeneratorFunction(''), false);
+    assert.deepStrictEqual(isGeneratorFunction('123'), false);
+    assert.deepStrictEqual(isGeneratorFunction(1), false);
+    assert.deepStrictEqual(isGeneratorFunction(false), false);
+    assert.deepStrictEqual(isGeneratorFunction(true), false);
+    assert.deepStrictEqual(isGeneratorFunction({}), false);
+    assert.deepStrictEqual(isGeneratorFunction([]), false);
+    assert.deepStrictEqual(isGeneratorFunction({age:1}), false);
+    assert.deepStrictEqual(isGeneratorFunction([1,2,3]), false);
+    assert.deepStrictEqual(isGeneratorFunction(test1), true);
+  });
+});
+
 
 describe('isFunction', function() {
   it('test isFunction', function() {

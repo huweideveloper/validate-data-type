@@ -1,19 +1,16 @@
-const path = require("path");
-const typescript = require('@rollup/plugin-typescript');
+const { resolve } = require("path");
 const buble = require("@rollup/plugin-buble");
-import {terser} from 'rollup-plugin-terser';
-const resolve = (filePath) => path.resolve(__dirname, filePath);
+import { terser } from "rollup-plugin-terser";
 
 module.exports = {
-  input: resolve("./src/index.ts"),
+  input: resolve(__dirname, "./src/index.js"),
   output: {
     name: "validate-data-type",
     file: resolve("./index.js"),
-    format: "umd",        //amd", "cjs", "system", "es", "iife" or "umd"
+    format: "umd",
   },
   plugins: [
-    typescript(),
     buble(),
-    terser()
+    terser(),
   ],
 };
