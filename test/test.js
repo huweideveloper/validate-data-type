@@ -1,6 +1,6 @@
 
 'use strict';
-const {
+import {
   isNull,
   isUndefined,
   isString,
@@ -30,7 +30,7 @@ const {
   isSymbol,
   isWeakMap,
   isWeakSet,
-} = require('../src/index');
+} from '../src/index';
 const assert = require('assert');
 
 describe('isNull', function() {

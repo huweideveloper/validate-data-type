@@ -5,7 +5,7 @@ import { terser } from "rollup-plugin-terser";
 module.exports = {
   input: resolve(__dirname, "./src/index.js"),
   output: {
-    name: "validate-data-type",
+    name: "dataType",
     file: resolve("./index.js"),
     format: "umd",
   },
