@@ -1,7 +1,7 @@
 const _toString = Object.prototype.toString;
-const isType = (value:any, type: string) : boolean => _toString.call(value) === '[object ' + type + ']';
+const isType = (value: any, type: string)  => _toString.call(value) === '[object ' + type + ']';
 
-const isNull = (value: any) : boolean => isType(value, 'Null');
+const isNull = (value: any) => isType(value, 'Null');
 const isUndefined = (value: any) : boolean => isType(value, 'Undefined');
 
 // string

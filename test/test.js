@@ -7,7 +7,7 @@ const {
   isValidString,
   isEmptyString,
   isBoolean,
-  isTure,
+  isTrue,
   isFalse,
   isNumber,
   isValidNumber,
@@ -94,9 +94,9 @@ describe('isBoolean', function() {
     assert.deepStrictEqual(isBoolean({age:1}), false);
     assert.deepStrictEqual(isBoolean([1,2,3]), false);
     assert.deepStrictEqual(isBoolean(function(){}), false);
-    assert.deepStrictEqual(isTure(true), true);
+    assert.deepStrictEqual(isTrue(true), true);
     assert.deepStrictEqual(isFalse(false), true);
-    assert.deepStrictEqual(isTure(false), false);
+    assert.deepStrictEqual(isTrue(false), false);
     assert.deepStrictEqual(isFalse(true), false);
   });
 });

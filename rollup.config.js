@@ -1,7 +1,7 @@
 const path = require("path");
-const buble = require('@rollup/plugin-buble'); 
 const typescript = require('@rollup/plugin-typescript');
-
+const buble = require("@rollup/plugin-buble");
+import {terser} from 'rollup-plugin-terser';
 const resolve = (filePath) => path.resolve(__dirname, filePath);
 
 module.exports = {
@@ -9,10 +9,11 @@ module.exports = {
   output: {
     name: "validate-data-type",
     file: resolve("./index.js"),
-    format: "umd",
+    format: "umd",        //amd", "cjs", "system", "es", "iife" or "umd"
   },
   plugins: [
     typescript(),
-      buble(),
+    buble(),
+    terser()
   ],
 };
