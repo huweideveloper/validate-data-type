@@ -58,7 +58,7 @@ const isWeakMap = value => isType(value, 'WeakMap');
 const isWeakSet = value => isType(value, 'WeakSet');
 
 
-export {
+module.exports = {
     isNull,
     isUndefined,
     isString,
