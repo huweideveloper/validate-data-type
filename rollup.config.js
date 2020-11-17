@@ -1,7 +1,7 @@
 const { resolve } = require("path");
-import commonjs from "@rollup/plugin-commonjs";
+const commonjs =  require("@rollup/plugin-commonjs");
 const buble = require("@rollup/plugin-buble");
-import { terser } from "rollup-plugin-terser";
+const { terser } =  require("rollup-plugin-terser");
 
 
 module.exports = {
